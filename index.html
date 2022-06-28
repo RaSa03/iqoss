@@ -11,51 +11,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>General Page</title>
   </head>
 
   <body class="font-font-jost">
-    <header class="h-screen font-normal bg-iqos-teal">
+    <header
+      class="h-screen font-normal bg-iqos-teal tablet:min-h-[930px] phone:min-h-[750px]"
+    >
       <div
-        class="flex h-[83px] whitespace-nowrap bg-white items-center px-3 2xl:px-8"
+        class="flex h-16 lg:h-[83px] whitespace-nowrap bg-white items-center px-3 2xl:px-8 fixed top-0 left-0 right-0 z-50 phone:h-[59px]"
       >
-        <div class="w-1/12 2xl:mr-2 shrink-0">
+        <button
+          onclick="burgerMenu()"
+          type="button"
+          class="mr-20 p-4 xl:hidden shrink-0 phone:p-2 minphone:mr-0"
+        >
+          <img class="" src="./assets/MenuBurger.png" alt="" />
+        </button>
+        <div class="lg:w-1/12 2xl:mr-2 shrink-0 mx-auto px-2">
           <img src="./assets/Vector.svg" alt="" class="h-6 w-20" />
         </div>
-        <div
-          class="hidden xl:flex font-normal uppercase grow max-w-5xl justify-between items-center w-8/12"
-        >
-          <div>Actual stock</div>
-          <div>IQOS HEETS IN ksa</div>
-          <div>iqos lil solid</div>
-          <div>iqos iluma</div>
-          <div>iqos accessories</div>
-          <div>faq</div>
-          <div class="flex bg-gray-200 normal-case rounded-full py-1 px-3">
+        <div id="menu" class="notebook:hidden notebook:burger-menu xl:big-menu">
+          <button
+            class="absolute right-3 top-3 xl:hidden"
+            onclick="burgerMenu()"
+          >
+            <img src="./assets/error.png" alt="" />
+          </button>
+
+          <div class="subnav relative notebook:hover:h-[65px]">
+            <a class="" href="#">Actual stock</a>
+            <div
+              class="subnav-content absolute -left-5 xl:-left-8 z-40 bg-white px-3 py-1 xl:p-3 xl:pt-9 notebook:font-light notebook:text-center notebook:text-sm"
+            >
+              <div class="mb-1 xl:mb-3"><a href="#">IQOS HEETS JEDDAH</a></div>
+              <div><a href="#">IQOS HEETS RIyADH</a></div>
+            </div>
+          </div>
+
+          <div><a href="#IqosHeets">IQOS HEETS IN ksa</a></div>
+          <div><a href="#IqosLilSolid">iqos lil solid</a></div>
+          <div><a href="#IqosIluma">iqos iluma</a></div>
+          <div><a href="#IqosAccessories">iqos accessories</a></div>
+          <div><a href="#Faq">faq</a></div>
+          <div class="bg-gray-200 normal-case rounded-full py-1 px-3 flex">
             <div class="mx-2">Language</div>
             <button type="button">EN</button>
             <button type="button" class="mx-2">AR</button>
           </div>
+          <button
+            type="button"
+            class="flex xl:hidden mx-auto rounded-full border border-black p-1 px-3 items-center hover:bg-[#4CAF50] hover:text-white"
+          >
+            <img
+              class="w-4 h-4 mr-1"
+              src="./assets/_x30_8.Whatsapp.svg"
+              alt=""
+            />
+            <span>WhatsApp Support</span>
+          </button>
         </div>
-        <div class="flex grow ml-3">
-          <div class="grow">
+        <div class="flex xl:grow ml-3">
+          <div class="xl:grow">
             <button
               type="button"
-              class="mx-auto rounded-full border border-black flex p-1 px-3 items-center"
+              class="hidden xl:flex mx-auto rounded-full sm:border border-black p-1 px-3 items-center hover:bg-[#4CAF50] hover:text-white"
             >
               <img
                 class="w-4 h-4 mr-1"
-                src="./assets/_x30_8.Whatsapp.png"
+                src="./assets/_x30_8.Whatsapp.svg"
                 alt=""
               />
               <span>WhatsApp Support</span>
             </button>
           </div>
-          <div class="grow flex justify-end">
+          <div class="xl:grow flex justify-end">
             <div
-              class="bg-iqos-teal uppercase flex p-1 px-3 rounded-full items-center ml-1"
+              class="bg-iqos-teal uppercase flex p-1 px-3 rounded-full items-center ml-1 phone:ml-0 phone:py-0"
             >
-              <img class="w-4 mr-1" src="./assets/emptyBascet.png" alt="" />
+              <img
+                class="w-4 mr-1 phone:mr0"
+                src="./assets/korzinkapustaya.svg"
+                alt=""
+              />
               <div class="text-end grow self-end w-16 whitespace-nowrap">
                 0 sar
               </div>
@@ -64,37 +102,88 @@
         </div>
       </div>
 
-      <div class="h-full -mt-[83px]">
-        <div class="pt-20 flex h-full">
-          <img
-            class="absolute bottom-0 left-0 right-0"
-            src="./assets/HeaderBg.png"
-            alt="screen"
-          />
+      <div class="h-full w-full tablet-background">
+        <div class="w-full pt-20 flex h-full flex-col items-center md:flex-row">
           <div
-            class="z-10 h-full w-1/2 flex flex-col items-center justify-center px-5"
+            class="slider-image z-10 sm:w-3/4 lg:w-1/2 lg:px-5 px-6 phone:px-2"
           >
             <img class="w-full" src="./assets/test.png" alt="" />
           </div>
+
+          <!-- ==============     for slider images    ============== -->
+          <!-- =========      width <= 730 height <= 670       ========= -->
+
           <div
-            class="z-10 w-1/2 flex px-8 flex-col items-center justify-center"
+            class="slider-image z-10 sm:w-3/4 lg:w-1/2 lg:px-5 px-6 phone:px-2"
           >
-            <div class="max-w-[723px]">
-              <div class="text-6xl text-white">
-                Online Shop IQOS Heets in Saudi Arabia
-              </div>
+            <img
+              class="w-full"
+              src="./assets/ILUMA-PRIME-NEON-Slider.png"
+              alt=""
+            />
+          </div>
+
+          <!-- ==============     for slider images    ============== -->
+
+          <div
+            class="z-10 lg:w-1/2 flex px-8 phone:px-4 flex-col items-center tablet:h-full"
+          >
+            <div
+              class="max-w-[723px] tablet:h-full tablet:flex flex-col justify-center items-center"
+            >
+              <h1
+                class="slider-text font-light text-6xl text-white tablet:text-center phone:text-4xl phone:leading-relaxed"
+              >
+                Online Shop IQOS <br />
+                Heets in Saudi Arabia
+              </h1>
+              <!-- ===========  for slider texts  ========== -->
+              <h1
+                class="slider-text font-light text-6xl text-white tablet:text-center phone:text-4xl phone:leading-relaxed"
+              >
+                Slider Worked
+              </h1>
+              <!-- ===========  for slider texts  ========== -->
+
               <button
                 type="button"
-                class="px-5 py-3 mt-7 text-2xl bg-white rounded-full uppercase self-start"
+                class="slider-button px-8 py-3 mt-7 lg:text-2xl bg-white rounded-full uppercase hover:bg-iqos-teal hover:text-white phone:mt-10 border border-white/0 hover:border-white"
               >
                 CHOOSE HEETS
               </button>
-              <div class="absolute bottom-12 right-12">
-                <button class="h-8 w-8" type="button">
-                  <img class="h-8 w-8" src="./assets/Left.png" alt="" />
+              <!-- ===========  for slider buttons  ========== -->
+
+              <button
+                type="button"
+                class="slider-button px-8 py-3 mt-7 lg:text-2xl bg-white rounded-full uppercase hover:bg-iqos-teal hover:text-white phone:mt-10 border border-white/0 hover:border-white"
+              >
+                slider button
+              </button>
+              <!-- ===========  for slider buttons  ========== -->
+              <div
+                class="md:absolute md:bottom-12 md:right-12 tablet:mt-auto tablet:mb-3"
+              >
+                <button
+                  onclick="minusSlide()"
+                  class="h-8 w-8 phone:w-6 phone:h-6"
+                  type="button"
+                >
+                  <img
+                    class="h-8 w-8 phone:w-6 phone:h-6"
+                    src="./assets/Left.png"
+                    alt=""
+                  />
                 </button>
-                <button class="h-8 w-8 ml-2" type="button">
-                  <img class="h-8 w-8" src="./assets/Right.png" alt="" />
+                <button
+                  onclick="plusSlide()"
+                  class="h-8 w-8 ml-2 phone:w-6 phone:h-6"
+                  type="button"
+                >
+                  <img
+                    class="h-8 w-8 phone:w-6 phone:h-6"
+                    src="./assets/Right.png"
+                    alt=""
+                  />
                 </button>
               </div>
             </div>
@@ -102,224 +191,289 @@
         </div>
       </div>
     </header>
-
-    <section class="h-72 flex items-center justify-center px-5 my-16 2xl:my-24">
-      <div class="w-3/12 px-5 2xl:px-10">
-        <div class="flex items-center justify-end mb-4">
-          <div class="text-end">
-            <p>Delivery Area</p>
-            <p class="font-light">Riyadh, Jeddah and other cities</p>
+    <main>
+      <div
+        class="lg:h-72 flex items-center justify-center px-5 my-16 2xl:my-24 flex-col lg:flex-row"
+      >
+        <div class="lg:w-3/12 px-5 2xl:px-10 tablet:order-2 tablet:mt-10">
+          <div class="flex items-center md:justify-end mb-4 tablet:flex-col">
+            <div class="text-end tablet:text-center">
+              <h5 class="tablet:text-3xl">Delivery Area</h5>
+              <p class="font-light tablet:text-2xl">
+                Riyadh, Jeddah and other cities
+              </p>
+            </div>
+            <div class="w-[88px] h-[88px] md:ml-4 shrink-0 tablet:-order-5">
+              <img class="w-full" src="./assets/iconareagrey4.png" alt="" />
+            </div>
           </div>
-          <div class="w-[88] h-[88] ml-4 shrink-0">
-            <img class="w-full" src="./assets/iconareagrey4.png" alt="" />
+          <div
+            class="flex items-center md:justify-end mt-4 tablet:flex-col tablet:mt-10"
+          >
+            <div class="text-end tablet:text-center">
+              <h5 class="tablet:text-3xl">Delivery Time</h5>
+              <p class="font-light tablet:text-2xl">
+                Deliver within 2-4 days. Delivery Riyadh - Next Day Delivery
+              </p>
+            </div>
+            <div class="w-[88px] h-[88px] md:ml-4 shrink-0 tablet:-order-5">
+              <img class="w-full" src="./assets/iconareagrey5.png" alt="" />
+            </div>
           </div>
         </div>
-        <div class="flex items-center justify-end mt-4">
-          <div class="text-end">
-            <p>Delivery Time</p>
-            <p class="font-light">
-              Deliver within 2-4 days. Delivery Riyadh - Next Day Delivery
-            </p>
+
+        <div
+          class="lg:w-6/12 h-full flex p-6 2xl:p-8 items-center bg-iqos-grey shadow-card-shadow tablet:order-1 phone:flex-col phone:w-full"
+        >
+          <div class="w-1/2 sm:pr-5 2xl:px-8 phone:w-auto">
+            <img
+              class="w-full md:w-[90%] mx-auto hover:w-full"
+              src="./assets/kisspng-credit-card-debit-card-plastic-product.png"
+              alt=""
+            />
           </div>
-          <div class="w-[88] h-[88] ml-4 shrink-0">
-            <img class="w-full" src="./assets/iconareagrey5.png" alt="" />
+          <div class="w-1/2 flex flex-col items-start phone:w-auto">
+            <div class="phone:text-center">
+              <h2 class="text-4xl 2xl:leading-snug phone:text-3xl">
+                Pay online - get priority
+              </h2>
+              <p class="text-3xl 2xl:leading-normal phone:text-2xl phone:mt-3">
+                From same day delivery
+              </p>
+            </div>
+            <button
+              type="button"
+              class="mt-4 font-medium py-2 px-6 wei bg-iqos-teal text-white rounded-full self-start phone:mx-auto"
+            >
+              WhatsApp Support
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:w-3/12 px-5 2xl:px-10 tablet:order-3 tablet:mt-10">
+          <div class="flex items-center justify-start mb-4 tablet:flex-col">
+            <div class="w-[88px] h-[88px] md:mr-4 shrink-0">
+              <img class="w-full" src="./assets/iconfreegrey1.png" alt="" />
+            </div>
+            <div class="tablet:text-center">
+              <h5 class="tablet:text-3xl">Free delivery</h5>
+              <p class="font-light tablet:text-2xl">
+                For any order over 500 SAR
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-end mt-4 tablet:flex-col tablet:mt-10"
+          >
+            <div class="w-[88px] h-[88px] md:mr-4 shrink-0">
+              <img class="w-full" src="./assets/iconoriginalgrey1.png" alt="" />
+            </div>
+            <div class="tablet:text-center">
+              <h5 class="tablet:text-3xl">100% original</h5>
+              <p class="font-light tablet:text-2xl">
+                We supply IQOS and Heets directly from the manufacturer
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div
-        class="w-6/12 h-full flex p-6 2xl:p-8 items-center bg-iqos-grey shadow-card-shadow"
-      >
-        <div class="w-1/2 pr-5 2xl:px-8">
+      <div class="relative overflow-hidden mt-10">
+        <div
+          class="teal-background flex items-center mt-32 lg:h-[440px] flex-col lg:flex-row"
+        >
+          <div
+            class="px-16 2xl:px-28 py-10 order-last lg:order-none lgdisplay:text-center phone:text-3xl phone:p-5"
+          >
+            <h2 class="text-5xl text-white phone:text-3xl">
+              Exclusive color of IQOS Iluma - Neon Limited Edition
+            </h2>
+            <button
+              type="button"
+              class="bg-white text-xl py-3 px-6 uppercase rounded-full mt-8"
+            >
+              CHOOSE Iluma
+            </button>
+          </div>
+          <div
+            class="text-[160px] 2xl:text-[200px] text-white/50 uppercase lg:self-start lg:mt-10 tablet:text-9xl lgdisplay:px-5 -mt-20 md:-mt-32 phone:text-8xl tablet:font-semibold"
+          >
+            offer
+          </div>
           <img
-            class="w-full"
-            src="./assets/kisspng-credit-card-debit-card-plastic-product.png"
+            class="-mt-32 lg:-ml-32 lg:-mr-14 2xl:mr-0 order-first lg:order-none z-10 tablet:-mt-24"
+            src="./assets/ILUMA-PRIME-NEON.png"
             alt=""
           />
         </div>
-        <div class="w-1/2 flex flex-col items-start">
-          <div class="">
-            <p class="text-4xl 2xl:leading-snug">Pay online - get priority</p>
-            <p class="text-3xl 2xl:leading-normal">From same day delivery</p>
-          </div>
-          <div
-            class="mt-4 font-medium py-2 px-4 wei bg-iqos-teal text-white rounded-full self-start"
-          >
-            WhatsApp Support
-          </div>
-        </div>
       </div>
 
-      <div class="w-3/12 px-5 2xl:px-10">
-        <div class="flex items-center justify-start mb-4">
-          <div class="w-[88px] h-[88px] mr-4 shrink-0">
-            <img class="w-full" src="./assets/iconfreegrey1.png" alt="" />
+      <div id="ActualStock" class="pt-20 md:pt-32">
+        <div class="heets-title">
+          <h2 class="m-3 mb-0 leading-relaxed">ACTUAL STOCK</h2>
+          <img class="w-full" src="./assets/Line18.png" alt="" />
+        </div>
+
+        <div class="mt-14 phone:mt-8 flex tablet:justify-between">
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
+            <h2 class="product-title">Heets RUBY FUSE</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: red berries and floral hints
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around whitespace-nowrap"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full whitespace-nowrap flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
           </div>
-          <div class="">
-            <p>Free delivery</p>
-            <p class="font-light">For any order over 500 SAR</p>
+          <div class="product-card hidden xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
+            <h2 class="product-title">IQOS ILuma Prime Obsidian Black</h2>
+            <div class="product-subtitle tablet:text-xs"></div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden 2xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <!-- <div class="save-sar-teal"></div>
+            <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
+            <h2 class="product-title">Heets Amber selection</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: original tobacco flavour
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <!-- <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
+            <h2 class="product-title">Heets Terea Balanced Regular</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: soft original tobacco
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-        <div class="flex items-center justify-end mt-4">
-          <div class="w-[88px] h-[88px] mr-4 shrink-0">
-            <img class="w-full" src="./assets/iconoriginalgrey1.png" alt="" />
-          </div>
-          <div class="">
-            <p>100% original</p>
-            <p class="font-light">
-              We supply IQOS and Heets directly from the manufacturer
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="relative overflow-hidden mt-10">
-      <img class="absolute bottom-0" src="./assets/OfferVector.png" alt="" />
-
-      <div class="bg-iqos-teal flex items-center mt-32 h-[440px]">
-        <div class="px-16 2xl:px-28 py-10">
-          <p class="text-5xl text-white">
-            Exclusive color of IQOS Iluma - Neon Limited Edition
-          </p>
-          <button
-            type="button"
-            class="bg-white text-xl py-3 px-6 uppercase rounded-full mt-8"
-          >
-            CHOOSE Iluma
+        <div class="w-max mt-12 md:mt-20 mx-auto">
+          <button class="white-button hover:bg-iqos-teal hover:text-white">
+            show more +
           </button>
         </div>
+      </div>
+
+      <div id="IqosHeets" class="pt-20 md:pt-32 xl:h-[490px]">
         <div
-          class="text-[160px] 2xl:text-[200px] text-white/50 uppercase self-start mt-10"
+          class="xl:h-[370px] mt-[100px] md:mt-[130px] flex justify-between items-center px-10 grey-background notebook:flex-col notebook:p-7 pt-0"
         >
-          offer
-        </div>
-        <img
-          class="-mt-32 -ml-32 -mr-14 2xl:mr-0"
-          src="./assets/ILUMA-PRIME-NEON.png"
-          alt=""
-        />
-      </div>
-    </section>
+          <img
+            class="-mt-24 md:-mt-[148px]"
+            src="./assets/terea5big.png"
+            alt=""
+          />
 
-    <section class="">
-      <div class="heets-title">
-        <p class="m-3 mb-0 leading-relaxed">ACTUAL STOCK</p>
-        <img class="w-full" src="./assets/Line18.png" alt="" />
-      </div>
-
-      <div class="mt-14 flex">
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE lorem5</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
-          <!-- <div class="min-h-[70px]"> -->
-          <div class="product-title">IQOS ILuma Prime Obsidian Black</div>
-          <!-- <div class="product-subtitle">taste: red berries and floral hints</div> -->
-          <!-- </div> -->
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(1 device)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <!-- ==== -->
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
-          <div class="product-title">Heets Amber selection</div>
-          <div class="product-subtitle">taste: original tobacco flavour</div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card hidden 2xl:flex">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-      <div class="w-max mt-20 mx-auto">
-        <button class="white-button">show more +</button>
-      </div>
-    </section>
-
-    <section class="">
-      <div class="relative overflow-hidden mt-20 h-[490px]">
-        <img
-          class="absolute bottom-0"
-          src="./assets/ShowmoreVector.png"
-          alt=""
-        />
-        <div
-          class="bg-iqos-grey h-[370px] mt-[120px] flex justify-between items-center px-10"
-        >
-          <img class="-mt-[148px]" src="./assets/terea5big.png" alt="" />
-
-          <div class="w-1/2">
-            <div class="iqos-info-title">
+          <div class="xl:w-1/2 notebook:text-center">
+            <h2 class="iqos-info-title">
               Buy heets Saudi Arabia – Iqos KSA and Heets online - Shop
-            </div>
+            </h2>
             <div class="iqos-info-text">
               The best online shop IQOS Heets in Saudi Arabia with delivery in
               Riyadh, Jeddah. IQOS devices are a modern method of smoking
@@ -332,241 +486,305 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="">
-      <div class="heets-title">
-        <p class="m-3 mb-0 leading-relaxed">HEETS CLASSIC</p>
-        <img class="w-full" src="./assets/Line18.png" alt="" />
+      <div class="pt-16 md:pt-20 xl:pt-52">
+        <div class="heets-title">
+          <h2 class="m-3 mb-0 leading-relaxed">heets classic</h2>
+          <img class="w-full" src="./assets/Line18.png" alt="" />
+        </div>
+
+        <div class="mt-14 phone:mt-8 flex tablet:justify-between">
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
+            <h2 class="product-title">Heets RUBY FUSE</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: red berries and floral hints
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around whitespace-nowrap"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full whitespace-nowrap flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
+            <h2 class="product-title">IQOS ILuma Prime Obsidian Black</h2>
+            <div class="product-subtitle tablet:text-xs"></div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden 2xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <!-- <div class="save-sar-teal"></div>
+            <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
+            <h2 class="product-title">Heets Amber selection</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: original tobacco flavour
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <!-- <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
+            <h2 class="product-title">Heets Terea Balanced Regular</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: soft original tobacco
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div class="white-button phone:text-sm">OUT OF STOCK</div>
+          </div>
+        </div>
+        <div class="w-max mt-12 md:mt-20 mx-auto">
+          <button class="white-button hover:bg-iqos-teal hover:text-white">
+            show more +
+          </button>
+        </div>
       </div>
 
-      <div class="mt-14 flex">
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE lorem5</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
+      <div class="pt-8 md:pt-12 xl:pt-14">
+        <div class="heets-title">
+          <h2 class="m-3 mb-0 leading-relaxed">HEETS TEREA</h2>
+          <img class="w-full" src="./assets/Line18.png" alt="" />
         </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
-          <!-- <div class="min-h-[70px]"> -->
-          <div class="product-title">IQOS ILuma Prime Obsidian Black</div>
-          <!-- <div class="product-subtitle">taste: red berries and floral hints</div> -->
-          <!-- </div> -->
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(1 device)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <!-- ==== -->
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
-          <div class="product-title">Heets Amber selection</div>
-          <div class="product-subtitle">taste: original tobacco flavour</div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(for 1 box)</div>
-          </div>
-          <!-- <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div> -->
-          <div class="white-button text-center">OUT OF STOCK</div>
-        </div>
-        <div class="product-card hidden 2xl:flex">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-      <div class="w-max mt-20 mx-auto">
-        <button class="white-button">show more +</button>
-      </div>
-    </section>
 
-    <section class="">
-      <div class="heets-title">
-        <p class="m-3 mb-0 leading-relaxed">HEETS TEREA</p>
-        <img class="w-full" src="./assets/Line18.png" alt="" />
+        <div class="mt-14 phone:mt-8 flex tablet:justify-between">
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
+            <h2 class="product-title">Heets RUBY FUSE</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: red berries and floral hints
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around whitespace-nowrap"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full whitespace-nowrap flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
+            <h2 class="product-title">IQOS ILuma Prime Obsidian Black</h2>
+            <div class="product-subtitle tablet:text-xs"></div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden 2xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <!-- <div class="save-sar-teal"></div>
+        <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
+            <h2 class="product-title">Heets Amber selection</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: original tobacco flavour
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <!-- <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
+            <h2 class="product-title">Heets Terea Balanced Regular</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: soft original tobacco
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div class="white-button phone:text-sm">OUT OF STOCK</div>
+          </div>
+        </div>
+        <div class="w-max mt-12 md:mt-20 mx-auto">
+          <button class="white-button hover:bg-iqos-teal hover:text-white">
+            show more +
+          </button>
+        </div>
       </div>
 
-      <div class="mt-14 flex">
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE lorem5</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
-          <!-- <div class="min-h-[70px]"> -->
-          <div class="product-title">IQOS ILuma Prime Obsidian Black</div>
-          <!-- <div class="product-subtitle">taste: red berries and floral hints</div> -->
-          <!-- </div> -->
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(1 device)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <!-- ==== -->
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
-          <div class="product-title">Heets Amber selection</div>
-          <div class="product-subtitle">taste: original tobacco flavour</div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(for 1 box)</div>
-          </div>
-          <!-- <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div> -->
-          <div class="white-button text-center">OUT OF STOCK</div>
-        </div>
-        <div class="product-card hidden 2xl:flex">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-      <div class="w-max mt-20 mx-auto">
-        <button class="white-button">show more +</button>
-      </div>
-    </section>
-
-    <section class="">
-      <div class="relative overflow-hidden mt-20 h-[675px]">
-        <img
-          class="absolute bottom-0"
-          src="./assets/ShowmoreVector.png"
-          alt=""
-        />
+      <div class="pt-20 xl:h-[675px] md:pt-32">
         <div
-          class="bg-iqos-grey h-[530px] mt-[145px] flex justify-between items-center px-10"
+          class="xl:h-[530px] mt-28 md:mt-[145px] flex justify-between items-center p-7 grey-background notebook:flex-col phone:p-5"
         >
           <img
-            class="-mt-[195px] z-10"
+            class="-mt-28 md:-mt-[195px] z-10"
             src="./assets/terea5_iluma.png"
             alt=""
           />
 
-          <div class="w-1/2">
-            <div class="iqos-info-title">What is IQOS?</div>
+          <div class="xl:w-1/2">
+            <h2 class="iqos-info-title">What is IQOS?</h2>
             <div class="iqos-info-text">
-              The IQOS Saudi Arabia tobacco heating system is a modern solution
-              of the 21st century designed to solve such problems of smokers as
-              ash, high burning temperature and harmful smoke. All three of
-              these factors are the negative consequences of smoking regular
-              cigarettes. The IQOS device at KSA helps solve these problems, it
-              heats specially designed HeatSticks not higher than 350 degrees
-              Celsius. <br />
-              <br />
+              <p class="mb-2">
+                The IQOS Saudi Arabia tobacco heating system is a modern
+                solution of the 21st century designed to solve such problems of
+                smokers as ash, high burning temperature and harmful smoke. All
+                three of these factors are the negative consequences of smoking
+                regular cigarettes. The IQOS device at KSA helps solve these
+                problems, it heats specially designed HeatSticks not higher than
+                350 degrees Celsius.
+              </p>
               This simple process produces aromatic nicotine containing smoke
               vapor, which reveals the real taste of tobaccowith certain
               aromatic flavors, depending on which HeatStick the smoker chose
@@ -579,221 +797,325 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="">
-      <div class="heets-title">
-        <p class="m-3 mb-0 leading-relaxed">HEETS ILUMA</p>
-        <img class="w-full" src="./assets/Line18.png" alt="" />
+      <div id="IqosIluma" class="pt-20 md:pt-32 xl:pt-56">
+        <div class="heets-title">
+          <h2 class="m-3 mb-0 leading-relaxed">iqos iluma</h2>
+          <img class="w-full" src="./assets/Line18.png" alt="" />
+        </div>
+
+        <div class="mt-14 phone:mt-8 flex tablet:justify-between">
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
+            <h2 class="product-title">Heets RUBY FUSE</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: red berries and floral hints
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around whitespace-nowrap"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full whitespace-nowrap flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="red-new ml-auto">new</div>
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
+            <h2 class="product-title">IQOS ILuma Prime Obsidian Black</h2>
+            <div class="product-subtitle tablet:text-xs"></div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card hidden 2xl:flex">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <!-- <div class="save-sar-teal"></div>
+            <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
+            <h2 class="product-title">Heets Amber selection</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: original tobacco flavour
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="save-sar-teal">save 100 sar</div>
+              <!-- <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
+            <h2 class="product-title">Heets Terea Balanced Regular</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: soft original tobacco
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]">499sar</div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-max mt-12 md:mt-20 mx-auto">
+          <button class="white-button hover:bg-iqos-teal hover:text-white">
+            show more +
+          </button>
+        </div>
       </div>
 
-      <div class="mt-14 flex">
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE lorem5</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
+      <div id="IqosLilSolid" class="pt-10 md:pt-22">
+        <div class="heets-title">
+          <h2 class="m-3 mb-0 leading-relaxed">iqos lil solid</h2>
+          <img class="w-full" src="./assets/Line18.png" alt="" />
+        </div>
+
+        <div class="mt-14 phone:mt-8 flex tablet:justify-between">
+          <div class="product-card lg:mx-12">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <div class="red-new ml-auto">new</div>
             </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
+            <h2 class="product-title">IQOS ILuma Prime Obsidian Black</h2>
+            <div class="product-subtitle tablet:text-xs"></div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 device)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div class="product-card lg:mx-12">
+            <div class="flex min-h-[12px] md:min-h-[32px] w-full">
+              <!-- <div class="save-sar-teal"></div>
+            <div class="red-new ml-auto"></div> -->
+            </div>
+            <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
+            <h2 class="product-title">Heets Amber selection</h2>
+            <div class="product-subtitle tablet:text-xs">
+              taste: original tobacco flavour
+            </div>
+            <div
+              class="flex justify-between text-2xl uppercase my-5 mt-auto w-full tablet:text-[14px] tablet:justify-around"
+            >
+              <div><span class="font-medium">399</span><span>sar</span></div>
+              <div class="line-through text-[#ADADAD]"></div>
+              <div class="tablet:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-between tablet:flex-wrap items-center"
+            >
+              <div class="white-button">
+                <button type="button" class="plusminus">-</button>
+                <span class="one">1</span>
+                <button type="button" class="plusminus">+</button>
+              </div>
+              <div class="md:hidden tablet:text-[8px] text-[#5E5E5E]">
+                (for 1 box)
+              </div>
+              <button class="add-to-cart-button tablet:w-full tablet:mt-2">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
-          <!-- <div class="min-h-[70px]"> -->
-          <div class="product-title">IQOS ILuma Prime Obsidian Black</div>
-          <!-- <div class="product-subtitle">taste: red berries and floral hints</div> -->
-          <!-- </div> -->
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(1 device)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
+        <div class="w-max mt-12 md:mt-20 mx-auto">
+          <button class="white-button hover:bg-iqos-teal hover:text-white">
+            show more +
+          </button>
         </div>
-        <div class="product-card">
-          <div class="flex min-h-[32px] my-2">
-            <!-- ==== -->
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806803.png" alt="" />
-          <div class="product-title">Heets Amber selection</div>
-          <div class="product-subtitle">taste: original tobacco flavour</div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(for 1 box)</div>
-          </div>
-          <!-- <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div> -->
-          <div class="white-button text-center">OUT OF STOCK</div>
-        </div>
-        <div class="product-card hidden 2xl:flex">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806804.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-      <div class="w-max mt-20 mx-auto">
-        <button class="white-button">show more +</button>
-      </div>
-    </section>
-    <section class="">
-      <div class="heets-title">
-        <p class="m-3 mb-0 leading-relaxed">IQOS LIL SOLID</p>
-        <img class="w-full" src="./assets/Line18.png" alt="" />
       </div>
 
-      <div class="mt-14 flex">
-        <div class="product-card mx-12">
-          <div class="flex min-h-[32px] my-2">
-            <div class="save-sar-teal">save 100 sar</div>
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806801.png" alt="" />
-          <div class="product-title">Heets RUBY FUSE lorem5</div>
-          <div class="product-subtitle">
-            taste: red berries and floral hints
-          </div>
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div class="line-through text-[#ADADAD]">499sar</div>
-            <div>(for 1 box)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="product-card mx-12">
-          <div class="flex min-h-[32px] my-2">
-            <div class="red-new ml-auto">new</div>
-          </div>
-          <img src="./assets/Ptoducts/PhotoHeetsruby5806802.png" alt="" />
-          <!-- <div class="min-h-[70px]"> -->
-          <div class="product-title">IQOS ILuma Prime Obsidian Black</div>
-          <!-- <div class="product-subtitle">taste: red berries and floral hints</div> -->
-          <!-- </div> -->
-          <div class="flex justify-between text-2xl uppercase my-5 mt-auto">
-            <div><span class="font-medium">399</span><span>sar</span></div>
-            <div>(1 device)</div>
-          </div>
-          <div class="w-full flex justify-between">
-            <div class="white-button p-0">
-              <button type="button" class="py-3 px-4 pl-5">-</button>
-              <span class="">1</span>
-              <button type="button" class="py-3 px-4">+</button>
-            </div>
-            <button class="add-to-cart-button">ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-      <div class="w-max mt-20 mx-auto">
-        <button class="white-button">show more +</button>
-      </div>
-    </section>
-
-    <section class="bg-iqos-teal px-14 py-16 mt-24">
-      <div class="text-5xl text-white py-10 leading-tight">
-        Arrange for delivery and receive IQOS KSA <br />
-        and IQOS Heets Saudi in the next 2-3 days
-      </div>
-      <div class="flex justify-between">
-        <div class="flex items-center w-[24%]">
-          <img class="mr-4" src="./assets/iconareagrey4.png" alt="" />
-          <p class="text-white text-2xl">
-            Determine your choice of IQOS and Heets, order online
-          </p>
-        </div>
-        <div class="flex items-center w-[24%]">
-          <img class="mr-4" src="./assets/iconareagrey4.png" alt="" />
-          <p class="text-white text-2xl">
-            Our manager will contact you to clarify your order
-          </p>
-        </div>
-        <div class="flex items-center w-[24%]">
-          <img class="mr-4" src="./assets/iconareagrey4.png" alt="" />
-          <p class="text-white text-2xl">
-            Deliver your order to an address specified in advance
-          </p>
-        </div>
-        <div class="flex items-center w-[24%]">
-          <img class="mr-4" src="./assets/iconareagrey4.png" alt="" />
-          <p class="text-white text-2xl">
-            You can pay for your orders in cash on delivery or use the online
-            payment
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-24">
-      <div class="relative flex h-[730px] items-center">
-        <img class="absolute z-30 left-10" src="./assets/cityBig.png" alt="" />
-
+      <div class="bg-iqos-teal px-14 py-16 mt-24 tablet:p-8">
+        <h2
+          class="text-3xl md:text-5xl text-white md:py-8 leading-tight tablet:text-center tablet:leading-[120%]"
+        >
+          Arrange for delivery and receive IQOS KSA <br />
+          and IQOS Heets Saudi in the next 2-3 days
+        </h2>
         <div
-          class="bg-iqos-grey flex items-center justify-end px-10 py-16 relative"
+          class="flex justify-between flex-wrap xl:flex-nowrap tablet:justify-center tablet:text-center text-2xl"
+        >
+          <div
+            class="flex items-center mt-7 md:w-[48%] xl:w-[24%] tablet:flex-col"
+          >
+            <img
+              class="md:mr-4 tablet:order-first"
+              src="./assets/iconareagrey4.png"
+              alt=""
+            />
+            <p class="text-white">
+              Determine your choice of IQOS and Heets, order online
+            </p>
+          </div>
+          <div
+            class="flex items-center mt-7 md:w-[48%] xl:w-[24%] tablet:flex-col"
+          >
+            <img
+              class="md:mr-4 tablet:order-first"
+              src="./assets/iconareagrey4.png"
+              alt=""
+            />
+            <p class="text-white">
+              Our manager will contact you to clarify your order
+            </p>
+          </div>
+          <div
+            class="flex items-center mt-7 md:w-[48%] xl:w-[24%] tablet:flex-col"
+          >
+            <img
+              class="md:mr-4 tablet:order-first"
+              src="./assets/iconareagrey4.png"
+              alt=""
+            />
+            <p class="text-white">
+              Deliver your order to an address specified in advance
+            </p>
+          </div>
+          <div
+            class="flex items-center mt-7 md:w-[48%] xl:w-[24%] tablet:flex-col"
+          >
+            <img
+              class="md:mr-4 tablet:order-first"
+              src="./assets/iconareagrey4.png"
+              alt=""
+            />
+            <p class="text-white">
+              You can pay for your orders in cash on delivery or use the online
+              payment
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="deliveryOptions"
+        class="mt-52 md:mt-60 2xl:mt-52 flex 2xl:items-center"
+      >
+        <div
+          class="flex 2xl:h-[350px] items-center p-10 2xl:py-16 grey-background flex-col 2xl:flex-row phone:p-7"
         >
           <img
-            class="absolute bottom-0"
-            src="./assets/ShowmoreVector.png"
+            class="max-w-[851px] -mt-36 2xl:mt-0 w-full phone:-mt-24"
+            src="./assets/cityBig.png"
             alt=""
           />
-          <div class="delivery-options pl-20">
-            <div class="iqos-info-title mb-3">
-              Delivery Options <br />
+
+          <div class="2xl:pl-16 mt-8">
+            <h2
+              class="iqos-info-title mb-3 xl:text-center 2xl:text-end tablet:leading-normal"
+            >
+              <span class="tablet:font-normal">Delivery Options</span>
+              <br />
               Delivery within 2-4 days: Riyadh, Jeddah
-            </div>
-            <div class="iqos-info-text">
+            </h2>
+            <div class="iqos-info-text xl:text-center 2xl:text-end">
               Familiar with the principles of tobacco heating, want to try all
               the benefits of heating tobacco with the IQOS device? Contact our
               manager on WhatsApp! By ordering IQOS Heets with online
@@ -802,15 +1124,20 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
-    <section class="bg-black py-8 px-14 grid grid-cols-2 text-white">
-      <div class="">
+    <footer
+      id="Faq"
+      class="bg-black py-8 px-8 md:px-14 lg:grid grid-cols-2 text-white mt-24 2xl:mt-40 tablet:text-center phone:font-light"
+    >
+      <div class="mb-4 tablet:flex justify-center">
         <img src="./assets/FooterLogo.png" alt="" />
       </div>
-      <div class="row-span-2 text-sm flex justify-between">
+      <div
+        class="row-span-2 text-sm flex justify-between tablet:flex-col tablet:items-center"
+      >
         <div>
-          <div class="font-semibold my-4">Catalog</div>
+          <div class="font-semibold mt-5 mb-2 md:my-4">Catalog</div>
           <ul class="text-[#A4A4A4] leading-normal">
             <li class="font-medium text-white"><a href="#">Actual Stock</a></li>
             <li><a href="#">Iqos Heets In KSA</a></li>
@@ -820,7 +1147,7 @@
           </ul>
         </div>
         <div>
-          <div class="font-semibold my-4">Quick links:</div>
+          <div class="font-semibold mt-5 mb-2 md:my-4">Quick Links:</div>
           <ul class="text-[#A4A4A4] leading-normal">
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms Of Use</a></li>
@@ -828,16 +1155,20 @@
           </ul>
         </div>
         <div>
-          <div class="font-semibold my-4">Catalog</div>
+          <div class="font-semibold mt-5 mb-2 md:my-4">Contact Us</div>
           <ul class="leading-normal">
-            <li><a href="#">sales@saudiarabiastick.online</a></li>
+            <li>
+              <a href="mailto:sales@saudiarabiastick.online"
+                >sales@saudiarabiastick.online</a
+              >
+            </li>
             <li><a href="#">Heets Jeddah</a></li>
             <li><a href="#">Heets Riadh</a></li>
           </ul>
         </div>
       </div>
-      <div class="w-96">
-        <div class="text-sm py-3 mb-4">
+      <div class="md:w-96">
+        <div class="text-sm py-3 mb-4 tablet:border-b border-b-white/30">
           Buy IQOS Heets in Kingdom Saudi Arabia With Free Delivery. Courier
           Delivery in the Cities of Riyadh and Jeddah. Our online store is not
           affiliated in any way with Philip Morris International (PMI). This is
@@ -845,6 +1176,14 @@
         </div>
         <div class="text-[9px]">Copyright © 2022 | All Rights Reserved.</div>
       </div>
-    </section>
+    </footer>
+
+    <script>
+      function burgerMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("notebook:hidden");
+      }
+    </script>
+    <script src="./slider.js"></script>
   </body>
 </html>
